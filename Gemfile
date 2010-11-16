@@ -27,13 +27,13 @@ gem "jquery-rails"
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-group :development, :test do
-  gem 'webrat'
-	gem 'rspec'
-	gem 'rspec-rails'
-end
-
 group :development, :test, :cucumber do
   gem 'cucumber-rails'
   gem 'cucumber'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'spork'
+  gem 'launchy'
 end
