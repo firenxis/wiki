@@ -67,7 +67,7 @@ Feature: Manage pages
     When I follow "2"
     Then I should see the following pages:
       |Title|Body|
-      |title 2|body 2|
-      |title 1|body 1|
+      |title 4|body 4|
+      |title 3|body 3|
 
 
