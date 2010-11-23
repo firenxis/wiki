@@ -1,5 +1,5 @@
 <h1>Listing pages</h1>
-
+<%= will_paginate(@pages) %>
 <table>
   <tr>
     <th>Title</th>
@@ -8,7 +8,6 @@
     <th></th>
     <th></th>
   </tr>
-
 <% @pages.each do |page| %>
   <tr>
     <td><%= page.title %></td>
@@ -19,7 +18,7 @@
   </tr>
 <% end %>
 </table>
-
+<%= will_paginate(@pages) %>
 <br />
 
 <%= link_to 'New Page', new_page_path %>

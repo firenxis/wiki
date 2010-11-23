@@ -2,7 +2,9 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.xml
   def index
-    @pages = Page.all
+    #@pages = Page.all
+
+    @pages = Page.paginate :page => params[:page], :order => 'updated_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+source 'http://gems.github.com'
 
 gem 'rails', '3.0.1'
 
@@ -23,6 +24,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
 gem "jquery-rails"
+gem 'will_paginate', '~> 3.0.beta'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators

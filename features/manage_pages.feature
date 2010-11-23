@@ -39,11 +39,35 @@ Feature: Manage pages
       |title|body|
       |title 1|body 1|
       |title 2|body 2|
-      |title 3|body 3|
-      |title 4|body 4|
-    When I delete the 3rd page
+    When I delete the 2nd page
     Then I should see the following pages:
       |Title|Body|
+      |title 2|body 2|
+
+  Scenario: Paginate pages
+    Given the following pages:
+      |title|body|
       |title 1|body 1|
       |title 2|body 2|
-      |title 4|body 4|
+      |title 3|body 3|
+      |title 4|body 4|	
+    When I delete the 1st page
+    Then I should see the following pages:
+      |Title|Body|
+      |title 3|body 3|
+      |title 2|body 2|
+
+  Scenario: Paginate pages 2
+    Given the following pages:
+      |title|body|
+      |title 1|body 1|
+      |title 2|body 2|
+      |title 3|body 3|
+      |title 4|body 4|	
+    When I follow "2"
+    Then I should see the following pages:
+      |Title|Body|
+      |title 2|body 2|
+      |title 1|body 1|
+
+
