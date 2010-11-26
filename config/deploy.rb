@@ -41,8 +41,6 @@ RAILS_CMD = "/home/#{user}/apps/shared/bundle/ruby/1.8/bin/rails"
 
 namespace :deploy do
   task :start do
-    run "mkdir -p /home/#{user}/apps/shared/pids"
-    run "mkdir -p /home/#{user}/apps/shared/log"    
     run "cd #{current_path} && RAILS_ENV=production #{RAILS_CMD} s -d -p6001"
   end
   
@@ -59,9 +57,15 @@ namespace :deploy do
   task :apt_get_extras do
      run "#{sudo} apt-get install -y libsqlite3-dev"    
   end
+
+  task :create_subdirs do
+    run "mkdir -p /home/#{user}/apps/shared/pids"
+    run "mkdir -p /home/#{user}/apps/shared/log"        
+  end
   
 end
-before('bundle:install', 'deploy:apt_get_extras')
+after('deploy:update_code', 'deploy:apt_get_extras')
+after('deploy:update_code', 'deploy:create_subdirs')
 
 
 
