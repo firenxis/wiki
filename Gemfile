@@ -8,6 +8,8 @@ gem 'rails', '3.0.1'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
+gem "hoptoad_notifier"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -25,6 +27,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem "jquery-rails"
 gem 'will_paginate', '~> 3.0.beta'
+gem "firenxis-god"
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
