@@ -82,4 +82,8 @@ class PagesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def exception
+    raise "Production Exception"
+  end
 end
